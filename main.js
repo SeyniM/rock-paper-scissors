@@ -1,9 +1,11 @@
+
+
+
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
 const winText = document.querySelector('.win-text');
 const score = document.querySelector('.score');
-console.log(score);
 
 rock.addEventListener('click', round);
 paper.addEventListener('click', round);
@@ -11,28 +13,24 @@ scissors.addEventListener('click', round);
 
 
 
-function computerPlay (){
+function computerPlay(){
     let randNumber;
     let computerSelection;
     randNumber = Math.floor(Math.random()*90)+1;
     if (randNumber<=30) {
         computerSelection="rock";
-        console.log("rock");
     } else if((randNumber>30) && (randNumber<=60)){
         computerSelection="paper";
-        console.log("paper");
     } else {
         computerSelection="scissors";
-        console.log("scissors");
     }
     return computerSelection;
 }
+
+
 let playerWinCount=0;
 let computerWinCount=0;
-let computerSelection;
-let winner;
-
-
+let scoreMatrix=[];
 
 function round(){
     const playerSelection = this.classList;
@@ -60,31 +58,26 @@ function round(){
     } else {
         winText.textContent="error";
     }
-    
-    return [playerWinCount, computerWinCount];
+    scoreMatrix=[playerWinCount, computerWinCount];
+    game();
 }
 
 
 
 
 function game(){
-    while ((computerWinCount<5) && (playerWinCount<5)){
-        winner=round();
-        console.log(winner);
-        computerWinCount=winner[1];
-        playerWinCount=winner[0];
-    } 
-    if (computerWinCount>playerWinCount){
-        console.log("computer won the game !");
+    if ((computerWinCount<5) && (playerWinCount<5)){
+        score.textContent=`Human : ${scoreMatrix[0]}     Computer : ${scoreMatrix[1]}`;
+        computerWinCount=scoreMatrix[1];
+        playerWinCount=scoreMatrix[0];
+    } else if (computerWinCount>playerWinCount){
+        score.textContent="Computer won the game !";
+        computerWinCount=0;
+        playerWinCount=0;
     } else {
-        console.log("player won the game !");
+        score.textContent="You won the game !";
+        computerWinCount=0;
+        playerWinCount=0;
     }
 }
-
-// game();
-
-// const buttons = document.querySelectorAll('button');
-
-
-
 
