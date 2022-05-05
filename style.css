@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.rock, .paper, .scissors{
+    margin: 10px;
+    border: 3px solid black;
+    border-radius: 4px;
+}
+
+.win-text {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}

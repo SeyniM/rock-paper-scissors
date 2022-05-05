@@ -1,3 +1,16 @@
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const winText = document.querySelector('.win-text');
+const score = document.querySelector('.score');
+console.log(score);
+
+rock.addEventListener('click', round);
+paper.addEventListener('click', round);
+scissors.addEventListener('click', round);
+
+
+
 function computerPlay (){
     let randNumber;
     let computerSelection;
@@ -19,35 +32,39 @@ let computerWinCount=0;
 let computerSelection;
 let winner;
 
+
+
 function round(){
-    const playerSelection = prompt("What's your name?").toLowerCase();
+    const playerSelection = this.classList;
     computerSelection=computerPlay();
     if (playerSelection==computerSelection){
-        console.log("tie");
+        winText.textContent="tie";
     } else if (playerSelection=="rock" && computerSelection=="paper"){
         computerWinCount+=1;
-        console.log("You Lose! Paper beats Rock");
+        winText.textContent="You Lose! Paper beats Rock";
     } else if(playerSelection=="rock" && computerSelection=="scissors"){
         playerWinCount+=1;
-        console.log("You Won! Rock beats Scissors");
+        winText.textContent="You Won! Rock beats Scissors";
     } else if (playerSelection=="paper" && computerSelection=="scissors"){
         computerWinCount+=1;
-        console.log("You Lose! Rock beats Scissors");
+        winText.textContent="You Lose! Rock beats Scissors";
     } else if(playerSelection=="paper" && computerSelection=="rock"){
         playerWinCount+=1;
-        console.log("You Won! Paper beats Rock");
+        winText.textContent="You Won! Paper beats Rock";
     } else if (playerSelection=="scissors" && computerSelection=="rock"){
         computerWinCount+=1;
-        console.log("You Lose! Rock beats Scissors");
+        winText.textContent="You Lose! Rock beats Scissors";
     } else if(playerSelection=="scissors" && computerSelection=="paper"){
         playerWinCount+=1;
-        console.log("You Won! Scissors beats Paper");
+        winText.textContent="You Won! Scissors beats Paper";
     } else {
-        console.log("error")
+        winText.textContent="error";
     }
     
     return [playerWinCount, computerWinCount];
 }
+
+
 
 
 function game(){
@@ -64,4 +81,10 @@ function game(){
     }
 }
 
-game();
+// game();
+
+// const buttons = document.querySelectorAll('button');
+
+
+
+
