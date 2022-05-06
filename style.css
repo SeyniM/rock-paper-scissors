@@ -10,7 +10,6 @@ body {
 }
 
 .title {
-    border: 1px solid red;
     color: rgb(214, 166, 10);
     font-size: 70px;
     justify-self: start;
@@ -27,7 +26,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 
 .rock, .paper, .scissors{
@@ -37,8 +35,7 @@ body {
 }
 
 .win-text {
-    border: 1px solid red;
-    height: 200px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,8 +44,7 @@ body {
 }
 
 .score {
-    border: 1px solid red;
-    height: 200px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;

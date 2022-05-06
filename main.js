@@ -36,7 +36,7 @@ function round(){
     const playerSelection = this.classList;
     computerSelection=computerPlay();
     if (playerSelection==computerSelection){
-        winText.textContent="tie";
+        winText.textContent="Tie";
     } else if (playerSelection=="rock" && computerSelection=="paper"){
         computerWinCount+=1;
         winText.textContent="You Lose! Paper beats Rock";
