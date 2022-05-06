@@ -45,7 +45,7 @@ function round(){
         winText.textContent="You Won! Rock beats Scissors";
     } else if (playerSelection=="paper" && computerSelection=="scissors"){
         computerWinCount+=1;
-        winText.textContent="You Lose! Rock beats Scissors";
+        winText.textContent="You Lose! Scissors beats Paper";
     } else if(playerSelection=="paper" && computerSelection=="rock"){
         playerWinCount+=1;
         winText.textContent="You Won! Paper beats Rock";
